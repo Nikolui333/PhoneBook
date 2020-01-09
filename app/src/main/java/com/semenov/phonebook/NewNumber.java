@@ -14,7 +14,7 @@ import android.widget.EditText;
 public class NewNumber extends AppCompatActivity implements View.OnClickListener {
 
     Button btnAdd, btnClear, btnDel;
-    EditText etName, etNumber, etId;
+    EditText etName, etNumber;
 
     DatabaseHelper databaseHelper;
 
@@ -34,7 +34,6 @@ public class NewNumber extends AppCompatActivity implements View.OnClickListener
 
         etName = (EditText) findViewById(R.id.etName);
         etNumber = (EditText) findViewById(R.id.etEmail);
-        etId = (EditText) findViewById(R.id.etId);
 
         databaseHelper = new DatabaseHelper(getApplicationContext()); //создание объекта DatabaseHelper
     }
@@ -43,7 +42,6 @@ public class NewNumber extends AppCompatActivity implements View.OnClickListener
 
         String name = etName.getText().toString();
         String number = etNumber.getText().toString();
-        String id = etId.getText().toString();
 
         SQLiteDatabase database = databaseHelper.getWritableDatabase();
 
@@ -64,11 +62,9 @@ public class NewNumber extends AppCompatActivity implements View.OnClickListener
                     database.delete(DatabaseHelper.TABLE, null, null);
                     break;
 
-                case R.id.btnDel: //кнопка "удалить"
-                    if (id.equalsIgnoreCase("")){
-                        break;
-                    }
-                    int delCount = database.delete(DatabaseHelper.TABLE, DatabaseHelper.COLUMN_ID + "=" + id, null);
+                case R.id.btnDel:
+
+                    int delCount = database.delete(DatabaseHelper.TABLE, DatabaseHelper.COLUMN_NAME + " = ?", new String[] {name});
 
                     Log.d("mLog", "deleted rows count = " + delCount);
             }
