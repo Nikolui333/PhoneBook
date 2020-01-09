@@ -6,12 +6,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "userstore.db"; // название бд
-    private static final int SCHEMA = 1; // версия базы данных
+    private static final int SCHEMA = 2; // версия базы данных
     static final String TABLE = "users"; // название таблицы в бд
     // названия столбцов
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_NAME = "name";
-    public static final String COLUMN_YEAR = "year";
+    public static final String COLUMN_YEAR = "number";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, SCHEMA); //создание безы данных и передача ей названия и номера версии

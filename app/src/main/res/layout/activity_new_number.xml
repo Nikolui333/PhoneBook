@@ -40,13 +40,6 @@
             android:layout_height="wrap_content"
             android:text="Delete">
         </Button>
-        <Button
-            android:id="@+id/btnRefresh"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Refresh"
-            android:onClick="onCreate">
-        </Button>
 
     </LinearLayout>
     <LinearLayout

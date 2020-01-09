@@ -73,6 +73,5 @@ public class MainActivity extends AppCompatActivity {
     public void newNumber(View view){
         Intent intent = new Intent(this,NewNumber.class);
         startActivity(intent);
-
     }
 }

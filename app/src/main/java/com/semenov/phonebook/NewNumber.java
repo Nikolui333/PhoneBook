@@ -14,7 +14,7 @@ import android.widget.EditText;
 public class NewNumber extends AppCompatActivity implements View.OnClickListener {
 
     Button btnAdd, btnRead, btnClear, btnUpd, btnDel;
-    EditText etName, etEmail, etId;
+    EditText etName, etNumber, etId;
 
     SQLiteDatabase db;
     DatabaseHelper databaseHelper; //возможно стоит не создавать эти переменные заново, а взять из главной активности
@@ -40,7 +40,7 @@ public class NewNumber extends AppCompatActivity implements View.OnClickListener
         btnClear.setOnClickListener(this);
 
         etName = (EditText) findViewById(R.id.etName);
-        etEmail = (EditText) findViewById(R.id.etEmail);
+        etNumber = (EditText) findViewById(R.id.etEmail);
         etId = (EditText) findViewById(R.id.etId);
 
         databaseHelper = new DatabaseHelper(getApplicationContext()); //создание объекта DatabaseHelper
@@ -49,7 +49,7 @@ public class NewNumber extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
 
         String name = etName.getText().toString();
-        String email = etEmail.getText().toString();
+        String email = etNumber.getText().toString();
         String id = etId.getText().toString();
 
         SQLiteDatabase database = databaseHelper.getWritableDatabase();
@@ -64,7 +64,7 @@ public class NewNumber extends AppCompatActivity implements View.OnClickListener
                     contentValues.put(DatabaseHelper.COLUMN_YEAR, email);
 
                     database.insert(DatabaseHelper.TABLE, null, contentValues);
-                    new MainActivity().onResume();
+                    /*new MainActivity().*/onResume();
                     break;
 
                 case R.id.btnRead:
@@ -77,7 +77,7 @@ public class NewNumber extends AppCompatActivity implements View.OnClickListener
                         do {
                             Log.d("mLog", "ID = " + cursor.getInt(idIndex) +
                                     ", name = " + cursor.getString(nameIndex) +
-                                    ", email = " + cursor.getString(emailIndex)); //поменять название
+                                    ", number = " + cursor.getString(emailIndex)); //поменять название
                         } while (cursor.moveToNext());
                     } else
                         Log.d("mLog","0 rows");
@@ -106,11 +106,10 @@ public class NewNumber extends AppCompatActivity implements View.OnClickListener
                     int delCount = database.delete(DatabaseHelper.TABLE, DatabaseHelper.COLUMN_ID + "=" + id, null);
 
                     Log.d("mLog", "deleted rows count = " + delCount);
-
             }
-            db.close();
+            databaseHelper.close();
         } catch (Exception ex){
 
         }
-        }
+    }
 }
