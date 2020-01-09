@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">PhoneBook</string>
+    <string name="buttonList">Список номеров</string>
+    <string name="buttonControl">Управление номерами</string>
+    
+    <string name="delete">Удалить</string>
+    <string name="save">Сохранить</string>
+    <string name="update">Обновить</string>
+    <string name="deleteAll">Удалить всё</string>
+
+    <string name="name">Имя</string>
+    <string name="number">Номер телефона</string>
+    <string name="id">Порядковый номер абонента</string>
+
+    <string name="delete2">Если нужно удалить абонента, введите его порядковый номер в
+        соответствующую ячейку и нажмите клавишу "удалить"</string>
 </resources>

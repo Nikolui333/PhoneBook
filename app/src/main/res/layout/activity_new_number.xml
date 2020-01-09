@@ -6,63 +6,72 @@
 
     <EditText
         android:id="@+id/etId"
-        android:hint="Id"
+        android:hint="@string/id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </EditText>
 
     <EditText
         android:id="@+id/etName"
-        android:hint="Name"
+        android:hint="@string/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </EditText>
 
     <EditText
         android:id="@+id/etEmail"
-        android:hint="Email"
+        android:hint="@string/number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </EditText>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/btnUpd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Update">
-        </Button>
-        <Button
-            android:id="@+id/btnDel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Delete">
-        </Button>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
         <Button
             android:id="@+id/btnAdd"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Add">
+            android:text="@string/save"
+            android:textSize="22sp">
         </Button>
+
         <Button
-            android:id="@+id/btnRead"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Read">
-        </Button>
-        <Button
-            android:id="@+id/btnClear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Clear">
+        android:id="@+id/btnDel"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        android:textSize="22sp">
         </Button>
     </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+        >
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/deleteAll"
+        android:textSize="22sp">
+    </Button>
+</LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/delete2"
+        android:layout_margin="10dp"
+        android:textSize="15sp"
+        android:layout_marginTop="20sp"
+        />
+
 
 </LinearLayout>
